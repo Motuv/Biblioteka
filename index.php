@@ -29,9 +29,9 @@
     <script src="js/slider.js"></script>
     <script>
         const imageArr = [
-            "img/sliderImg/slider1.jpg",
-            "img/sliderImg/slider2.jpg",
-            "img/sliderImg/slider3.jpg"
+            "img/slider1.jpg",
+            "img/slider2.jpg",
+            "img/slider3.jpg"
         ];
 
         const slider = new Slider(imageArr);
