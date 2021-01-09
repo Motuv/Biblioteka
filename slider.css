@@ -1,0 +1,92 @@
+.container__slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sliderBtn {
+  cursor: pointer;
+  width: 7%;
+  height: 10%;
+  background-color: #41b883;
+  color: #fff;
+  border: none;
+  outline: 0;
+  position: absolute;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.sliderBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.sliderBtn:disabled:hover {
+  background-color: #41b883;
+}
+
+.sliderBtn:hover {
+  background-color: #379c6f;
+}
+
+.sliderBtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.sliderBtn--prev {
+  left: 0;
+}
+
+.sliderBtn--prev::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-25%, -50%) rotate(-45deg);
+}
+
+.sliderBtn--next {
+  right: 0;
+}
+
+.sliderBtn--next::before {
+  left: 50%;
+  top: 50%;
+  transform: translate(-75%, -50%) rotate(135deg);
+}
+
+.slide__image {
+  width: 100%;
+}
+
+.slide__caption {
+  text-align: center;
+}
+
+.slide__caption input {
+  display: none;
+}
+
+.slide__caption label {
+  margin: 0 2vw;
+}
+
+.slide__caption label::before {
+  content: "";
+  border: 2px solid #000;
+  display: inline-block;
+  width: 1.1vw;
+  height: 1.1vw;
+  border-radius: 45%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.slide__caption input:checked + label::before {
+  background-color: black;
+}
