@@ -17,6 +17,7 @@ if($result = mysqli_query($conn, $sql)){
                 echo "<th>wydawnictwo</th>";
                 echo "<th>liczba wypozyczen</th>";
                 echo "<th>status</th>";
+                echo "<th>Zarezerwuj</th>";
             echo "</tr>";
         while($row = mysqli_fetch_array($result)){
             echo "<tr>";
@@ -27,7 +28,12 @@ if($result = mysqli_query($conn, $sql)){
                 echo "<td>" . $row['wydawnictwo'] . "</td>";
                 echo "<td>" . $row['l_wypozyczen'] . "</td>";
                 echo "<td>" . $row['status'] . "</td>";
-            echo "</tr>";
+                echo "<td>";
+                if($row["status"]=='dostepna'){
+                  echo "<form action='sprawdz_wolne.php' method='post'><input name='id' type='number' value='".$row["id_ksiazki"]."'></br><input type='submit' value='Zarezerwuj'></form>";
+                }
+                echo "</td>";
+              echo "</tr>";
         }
         echo "</table>";
         mysqli_free_result($result);
