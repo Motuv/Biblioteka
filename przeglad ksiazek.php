@@ -1,20 +1,11 @@
 <?php
-
-$servername = "mysql.agh.edu.pl";
-$login = "piotrmir";
-$pass = "3gsp7M61TP3wYKDV";
-$dbname = "piotrmir";
-
-$conn = new mysqli($servername, $login, $pass, $dbname);
-
-if (mysqli_error($conn)) {
-    die("Connection failed: ".mysqli_error($conn));
-}
+require 'header.php';
+require 'dbconnection.php';
 
 $sql = "SELECT * FROM ksiazki";
 if($result = mysqli_query($conn, $sql)){
     if(mysqli_num_rows($result) > 0){
-        echo "<table>";
+        echo "<table border='1'>";
             echo "<tr>";
                 echo "<th>id</th>";
                 echo "<th>tytul</th>";
@@ -43,6 +34,7 @@ if($result = mysqli_query($conn, $sql)){
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
- 
+
 mysqli_close($conn);
+require 'footer.php';
 ?>
