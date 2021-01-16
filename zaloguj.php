@@ -27,11 +27,17 @@ else
 
             $rezultat->free_result();
 
-            if($wiersz['typ'] == "bibliotekarz") 
-                header('Location: panel_bibliotekarza.php');//przekierowanie do panelu bibliotekarza
-            else
-                header('Location: panel_klienta.php');//przekierowanie do panelu klienta
-            
+            if($wiersz['typ'] == "bibliotekarz") {
+                session_start();
+                $_SESSION['user']=$login;
+                header('Location: panel_bibliotekarza.php');
+              }
+            else{
+                session_start();
+                $_SESSION['user']=$login;
+                header('Location: panel_klienta.php');
+              }
+
         }
         else header('Location: ponowne_logowanie.php');;
     }

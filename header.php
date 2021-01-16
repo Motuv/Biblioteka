@@ -9,5 +9,6 @@ echo'<!DOCTYPE html>
   <title>Document</title>
 </head>
 <body>
+<a href="index.php">Strona główna</a>
 <a href="panel_klienta.php">Wróć</a>'
 ?>
