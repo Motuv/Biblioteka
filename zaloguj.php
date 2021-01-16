@@ -39,7 +39,7 @@ else
               }
 
         }
-        else header('Location: ponowne_logowanie.php');;
+        else header('Location: ponowne_logowanie.php');
     }
 }
 

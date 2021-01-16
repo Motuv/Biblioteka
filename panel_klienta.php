@@ -1,7 +1,8 @@
 <?php
 require 'header.php';
-if(isset($_SESSION['user'])){
 session_start();
+if(isset($_SESSION['user'])){
+
 echo '</br>
 <h2>Witaj '.$_SESSION['user'].'</h2>
 <a href="przeglad ksiazek.php">Przeglądaj książki</a></br>
