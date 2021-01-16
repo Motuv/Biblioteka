@@ -30,11 +30,13 @@ else
             if($wiersz['typ'] == "bibliotekarz") {
                 session_start();
                 $_SESSION['user']=$login;
+                $_SESSION['typ']="bibliotekarz";
                 header('Location: panel_bibliotekarza.php');
               }
             else{
                 session_start();
                 $_SESSION['user']=$login;
+                $_SESSION['typ']="klient";
                 header('Location: panel_klienta.php');
               }
 

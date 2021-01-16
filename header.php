@@ -12,5 +12,13 @@ echo'<!DOCTYPE html>
 </head>
 <body>
 <a href="index.php">Strona główna</a>
-<a href="panel_klienta.php">Wróć</a>'
+<a href="';
+  session_start();
+  if($_SESSION['typ']=='bibliotekarz'){
+    echo 'panel_bibliotekarza.php';
+  }
+  else{
+    echo 'panel_klienta.php';
+  }
+echo '">Wróć</a>';
 ?>

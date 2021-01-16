@@ -1,7 +1,6 @@
 <?php
 require 'header.php';
 require 'dbconnection.php';
-session_start();
 
 $sql="UPDATE rezerwacje SET rezerwacje.id_ksiazki".$_SESSION['free']."=".$_SESSION['book']." WHERE rezerwacje.id_klienta=".$_SESSION['id_klienta'];
 mysqli_query($conn, $sql);

@@ -2,7 +2,7 @@
   require 'header.php';
   require 'dbconnection.php';
 
-  $sql="SELECT * FROM rezerwacje INNER JOIN  klienci ON klienci.id_klienta=rezerwacje.id_klienta INNER JOIN konta ON konta.id_klienta=klienci.id_klienta WHERE konta.login='".$_SESSION['user']."'";
+  $sql="SELECT * FROM rezerwacje INNER JOIN  klienci ON klienci.id_klienta=rezerwacje.id_klienta INNER JOIN konta ON konta.id_klienta=klienci.id_klienta WHERE klienci.id_klienta='".$_POST['id']."'";
   if($result = mysqli_query($conn, $sql)){
       while($row = mysqli_fetch_array($result)){
         echo "<table border='1'>";
