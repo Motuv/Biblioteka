@@ -15,7 +15,7 @@
             <a href="#"><div class="header__logo"><img src="img/logo.png"></div></a>
             <div class="header__account">
                 <a href="strona_logowania.php"><div class="btn">Zaloguj się</div></a>
-                <a href="#"><div class="btn">Załóż nowe konto</div></a>
+                <a href="nowe_konto.php"><div class="btn">Załóż nowe konto</div></a>
             </div>
         </div>
     </header>
