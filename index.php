@@ -5,11 +5,13 @@
     <title>Biblioteka AGH</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="fontello-417478ee/css/fontello.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
+        
     <header>
         <div class="header">
             <a href="#"><div class="header__logo"><img src="img/logo.png"></div></a>
@@ -26,7 +28,7 @@
             <button class="sliderBtn sliderBtn--next" data-button-next></button>
         </div>
     </div>
-    <script src="js/slider.js"></script>
+    <script src="slider.js"></script>
     <script>
         const imageArr = [
             "img/slider1.jpg",
