@@ -7,6 +7,7 @@ echo '</br>
 <a href="przeglad ksiazek.php">Przeglądaj książki</a></br>
 <a href="wyszukaj_ksiazke.php">Wyszukaj książkę</a></br>
 <a href="wyszukaj_usera.php">Wypożycz książkę</a></br>
+<a href="wyszukaj_usera_oddanie.php">Oddaj książkę</a></br>
 <a href="zarzadzaj_kontem.php">Zarządzaj kontem</a></br>
 <a href="wszyscy_klienci.php">Wszyscy klienci</a></br>
 <a href="wszyscy_autorzy.php">Wszyscy autorzy</a></br>

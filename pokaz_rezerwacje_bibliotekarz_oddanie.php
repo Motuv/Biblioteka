@@ -19,7 +19,7 @@
                 echo "<th>id_ksiazki4</th>";
                 echo "<th>id_ksiazki5</th>";
                 echo "<th>id_ksiazki6</th>";
-                echo "<th>Wypożycz</th>";
+                echo "<th>Oddaj</th>";
             echo "</tr>";
             echo "<tr>";
                 echo "<td>" . $row['id_rezerwacji'] . "</td>";
@@ -38,30 +38,27 @@
                 echo "<td>" . showtitle($row['id_ksiazki5']) . "</td>";
                 echo "<td>" . showtitle($row['id_ksiazki6']) . "</td>";
                 echo "<td>";
-                  echo "<form action='ustaw_terminy.php' method='post'><input name='id' type='number' value='".$row["id_rezerwacji"]."'></br><input type='submit' value='Wypożycz'></form>";
+                  echo "<form action='skasuj_terminy.php' method='post'><input name='id' type='number' value='".$row["id_rezerwacji"]."'></br><input type='submit' value='Oddaj'></form>";
                 echo "</td>";
-                if($row['id_ksiazki1']==0){
-                  header('Location: panel_bibliotekarza.php');
-                }
+
                   if($row['id_ksiazki1']!=0){
-                    wypozycz($row['id_ksiazki1']);
+                    oddaj($row['id_ksiazki1']);
                   }
                   if($row['id_ksiazki2']!=0){
-                    wypozycz($row['id_ksiazki2']);
+                    oddaj($row['id_ksiazki2']);
                   }
                   if($row['id_ksiazki3']!=0){
-                    wypozycz($row['id_ksiazki3']);
+                    oddaj($row['id_ksiazki3']);
                   }
                   if($row['id_ksiazki4']!=0){
-                    wypozycz($row['id_ksiazki4']);
+                    oddaj($row['id_ksiazki4']);
                   }
                   if($row['id_ksiazki5']!=0){
-                    wypozycz($row['id_ksiazki5']);
+                    oddaj($row['id_ksiazki5']);
                   }
                   if($row['id_ksiazki6']!=0){
-                    wypozycz($row['id_ksiazki6']);
+                    oddaj($row['id_ksiazki6']);
                   }
-
         }
         echo "</table>";
     }
