@@ -3,7 +3,7 @@
     require 'header.php';
     $login = $_SESSION['user'];
 
-    $sql = "SELECT * FROM klienci INNER JOIN konta WHERE konta.login='$login'";
+    $sql = "SELECT * FROM klienci,konta WHERE konta.login='$login' AND konta.id_konta=klienci.id_klienta";
 
     if ($rezultat = $conn->query($sql));
     {
