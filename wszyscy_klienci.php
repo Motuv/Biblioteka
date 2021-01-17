@@ -3,11 +3,6 @@ require 'header.php';
 require 'dbconnection.php';
 
 echo "<form action='dodaj_klienta.php'><input type='submit' value='Dodaj klienta'></form>";
-$conn = new mysqli($servername, $login, $pass, $dbname);
-
-if (mysqli_error($conn)) {
-    die("Connection failed: ".mysqli_error($conn));
-}
 
 $sql = "SELECT * FROM klienci";
 if($result = mysqli_query($conn, $sql)){
