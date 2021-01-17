@@ -3,11 +3,11 @@
     require 'header.php';
     $login = $_SESSION['user'];
 
-    $sql = "SELECT * FROM klienci WHERE imie='$login'";
+    $sql = "SELECT * FROM klienci INNER JOIN konta WHERE konta.login='$login'";
 
     if ($rezultat = $conn->query($sql));
     {
-        
+
         $wiersz = $rezultat->fetch_assoc();
         $imie = $wiersz['imie'];
         $nazwisko = $wiersz['nazwisko'];

@@ -3,7 +3,7 @@
   require 'dbconnection.php';
   include 'pokaz_tytul.php';
 
-  $sql="SELECT * FROM rezerwacje INNER JOIN  klienci ON klienci.id_klienta=rezerwacje.id_klienta INNER JOIN konta ON konta.id_klienta=klienci.id_klienta WHERE klienci.id_klienta='".$_POST['id']."'";
+  $sql="SELECT * FROM rezerwacje INNER JOIN  klienci ON klienci.id_klienta=rezerwacje.id_klienta INNER JOIN konta ON konta.id_konta=klienci.id_klienta WHERE klienci.id_klienta=".$_POST['id'];
   if($result = mysqli_query($conn, $sql)){
       while($row = mysqli_fetch_array($result)){
         echo "<table border='1'>";
@@ -36,13 +36,11 @@
                 echo "<td>" . showtitle($row['id_ksiazki5']) . "</td>";
                 echo "<td>" . showtitle($row['id_ksiazki6']) . "</td>";
                 echo "<td>";
-                  echo "<form action='' method='post'><input name='id' type='number' value='".$row["id_klienta"]."'></br><input type='submit' value='Pokaż rezerwację'></form>";
+                  echo "<form action='wypozycz.php' method='post'><input name='id' type='number' value='".$row["id_klienta"]."'></br><input type='submit' value='Pokaż rezerwację'></form>";
                 echo "</td>";
         }
         echo "</table>";
     }
-
-
 
   require 'footer.php';
 ?>
