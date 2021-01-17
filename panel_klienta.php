@@ -4,7 +4,7 @@ if(isset($_SESSION['user'])){
 
 echo '</br>
 <h2>Witaj '.$_SESSION['user'].'</h2>
-<a href="przeglad ksiazek.php">Przeglądaj książki</a></br>
+<a href="przeglad_ksiazek.php">Przeglądaj książki</a></br>
 <a href="wyszukaj_ksiazke.php">Wyszukaj książkę</a></br>
 <a href="pokaz_rezerwacje.php">Wyświetl rezerwację</a></br>
 <a href="zarzadzaj_kontem.php">Zarządzaj kontem</a></br>
