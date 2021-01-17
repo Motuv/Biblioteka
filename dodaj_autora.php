@@ -2,7 +2,7 @@
 require 'header.php';
 require 'dbconnection.php';
 
-    echo '<form action="process_adding_autor.php" method="get">
+    echo '<form action="process_adding_autor.php" method="post">
     <p>
         <label for="inputNazwa">Imie</label>
         <input type="text" name="imie" id="inputNazwa">
