@@ -39,10 +39,12 @@
                 echo "<td>" . showtitle($row['id_ksiazki6']) . "</td>";
                 echo "<td>";
                   echo "<form action='ustaw_terminy.php' method='post'><input name='id' type='number' value='".$row["id_rezerwacji"]."'></br><input type='submit' value='Wypożycz'></form>";
+                  echo "<form action='zmien_terminy.php' method='post'><input name='id' type='number' value='".$row["id_rezerwacji"]."'></br><input type='submit' value='Przedłuż'></form>";
                 echo "</td>";
                 if($row['id_ksiazki1']==0){
                   header('Location: panel_bibliotekarza.php');
                 }
+                else{
                   if($row['id_ksiazki1']!=0){
                     wypozycz($row['id_ksiazki1']);
                   }
@@ -61,6 +63,7 @@
                   if($row['id_ksiazki6']!=0){
                     wypozycz($row['id_ksiazki6']);
                   }
+                }
 
         }
         echo "</table>";

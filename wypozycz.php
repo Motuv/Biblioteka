@@ -12,9 +12,11 @@ function wypozycz($id){
       die("Connection failed: ".mysqli_error($conn));
   }
 
-  $sql="UPDATE ksiazki SET status='wypozyczona', l_wypozyczen=(SELECT l_wypozyczen FROM ksiazki WHERE id_ksiazki=$id)+1 WHERE id_ksiazki=$id";
+  $sql="UPDATE ksiazki SET status='wypozyczona',l_wypozyczen=l_wypozyczen+1 WHERE id_ksiazki=$id";
 
-  mysqli_query($conn,$sql);
+  if(mysqli_query($conn,$sql)){
+    return true;
+  }
 }
 
 function oddaj($id){
@@ -29,9 +31,11 @@ function oddaj($id){
       die("Connection failed: ".mysqli_error($conn));
   }
 
-  $sql="UPDATE ksiazki SET status='dostepna', l_wypozyczen=(SELECT l_wypozyczen FROM ksiazki WHERE id_ksiazki=$id)+1 WHERE id_ksiazki=$id";
+  $sql="UPDATE ksiazki SET status='dostepna' WHERE id_ksiazki=$id";
 
-  mysqli_query($conn,$sql);
+  if(mysqli_query($conn,$sql)){
+    return true;
+  }
 }
 
 ?>
